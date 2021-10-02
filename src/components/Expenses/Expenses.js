@@ -6,25 +6,22 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 
 const Expenses = (props) => {
-  const [selectedFilterDate, setSelectedFilterDate] = useState("2020");
+  const [selectedFilterYear, setSelectedFilterYear] = useState("2020");
 
   const handleExpenseFilterSelection = (selectedDate) => {
-    console.log("Selected date: " + selectedDate);
-    console.log(typeof(selectedDate))
-
-    setSelectedFilterDate(selectedDate);
+    setSelectedFilterYear(selectedDate);
   };
 
   const filterExpenses = (unfilteredExpense) => {
     const unfilteredExpenseYear = unfilteredExpense.date.getFullYear().toString()
-    return unfilteredExpenseYear === selectedFilterDate;
+    return unfilteredExpenseYear === selectedFilterYear;
   };
 
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter
-          selectedValue={selectedFilterDate}
+          selectedValue={selectedFilterYear}
           onExpenseFilterSelection={handleExpenseFilterSelection}
         />
 
