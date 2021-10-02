@@ -10,6 +10,7 @@ const NewExpense = (props) => {
       id: Math.random().toString(),
     };
     props.onAddExpense(expenseData);
+    props.onNewExpenseCancel();
   };
 
   const saveCancelExpenseHandler = (cancelNewExpense) => {
